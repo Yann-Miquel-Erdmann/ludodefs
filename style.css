@@ -2,16 +2,16 @@ body{
     background-color: rgb(167, 220, 255);
 }
 #text1{
-    width: 49%;
+    width: 48.75%;
     position: absolute;
     left: 0.5%;
 
     top: 3px;
 }
 #text2{
-    width: 49%;
+    width: 48.75%;
     position: absolute;
-    left: 50.5%;
+    right: 0.5%;
     top: 3px;
 }
 #infoone{
@@ -61,6 +61,7 @@ body{
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+    
 }
 #question{
     background-color: lightgreen;
@@ -198,4 +199,17 @@ body{
     left: 0%;
     display: flex;
     margin: auto; 
+}
+#window4{
+    position: absolute; 
+    top:40%;
+    left:30%;
+    height: 30%;
+    width: 40%;
+    background-color: rgb(69, 190, 255);
+}
+#downloadfile{
+    height: 100%;
+    width: 100%;
+    
 }

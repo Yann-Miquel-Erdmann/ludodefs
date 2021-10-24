@@ -7,6 +7,7 @@ var end = document.getElementById('end')
 var window1 = document.getElementById('window1')
 var window2 = document.getElementById('window2')
 var window3 = document.getElementById('window3')
+var window4 = document.getElementById('window4')
 var rep1 = document.querySelector('rep1')
 var rep2 = document.querySelector('rep2')
 var rep3 = document.querySelector('rep3')
@@ -22,21 +23,28 @@ function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-
+window4.style.display = 'none'
 window2.style.display = 'none'
 window3.style.display = 'none'
-reslutbas.style.display = 'non'
+reslutbas.style.display = 'none'
 function delete_info(f){
     elem = document.getElementById("info"+f)
     elem.remove()
+    if(info1.length>1){
+        info1.splice(f-1,1)
+        info2.splice(f-1,1)
+    }else{
+        info1 = []
+        info2 = []
+    }
 }
-function ajouter(){
+function ajouter(value1, value2){
     window1.style.display = "block"
     window2.style.display = 'none'
     window3.style.display = 'none'
-    if(text1.value!="" & text2.value!=""){
-        info1.push(text1.value)
-        info2.push(text2.value)
+    if(value1!="" & value2!=""){
+        info1.push(value1)
+        info2.push(value2)
         var inform = document.createElement('div')
         var info_one = document.createElement("div");
         var info_two = document.createElement("div");
@@ -55,8 +63,7 @@ function ajouter(){
         window1.insertBefore(inform, end)
         info_one.innerHTML = info1[info1.length-1]
         info_two.innerHTML = info2[info2.length-1]
-        text1.value = ""
-        text2.value = ""
+        
     }else{
         alert("impossible d'ajouter un champ vide")
     }
@@ -181,3 +188,56 @@ function commencer(){
     }
     
 }
+
+function charger_liste(){
+    window4.style.display= "block"
+    document.getElementById("downloadfile").style.display = "none"
+    document.getElementById("inputfile").style.display = "block"
+    document.getElementById("inputfile").addEventListener('change', function() {
+        
+        var all_files = this.files;
+        if(all_files.length == 0) {
+            alert('Error : No file selected');
+            return;
+        }
+        var file = all_files[0];
+        var max_size_allowed = 2*1024*1024
+        if(file.size > max_size_allowed) {
+            alert('Error : Exceeded size 2MB');
+            return;
+        }
+        var reader = new FileReader();
+        reader.addEventListener('load', function(e) {
+            var text = e.target.result;
+            let infos = []
+            infos = text.split(/\r?\n/)
+            for(i in infos){
+                let a = infos[i].split("¤")
+                ajouter(a[0], a[1])
+            }
+            window4.style.display = "none"
+        });
+
+        reader.addEventListener('error', function() {
+            alert('Error : Une erreur est survenue lors de la lecture du fichier');
+        });
+        reader.readAsText(file);
+        
+    });
+}
+function telecharger_liste(){
+    if(info1.length>0){
+        window4.style.display= "block"
+        document.getElementById("downloadfile").style.display = "block"
+        document.getElementById("inputfile").style.display = "none"
+        let fin = ""
+        for(i in info1){
+            fin = fin+info1[i]+"¤"+info2[i]+"\n"
+        }
+        var formBlob = new Blob([fin], { type: 'text/plain' });
+        document.getElementById("downloadfile").href = window.URL.createObjectURL(formBlob);
+    }else{
+        alert('Impossible de télécharger une liste vide')
+    }
+}
+

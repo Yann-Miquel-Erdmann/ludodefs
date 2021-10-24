@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ludodefs</title>
 </head>
 
 <body>
-    <input type="text" id="text1" value=""><input type="text" id="text2" value="">
+    <input type="text" id="text1" value="" placeholder="Question"><input type="text"  placeholder="Réponse" id="text2" value="">
     
     <br>
-    <input type="button" id="button" value="ajouter" onclick="ajouter()" style="width: 100%;">
+    <input type="button"value="ajouter" onclick="ajouter(text1.value,text1.value); text1.value = '';text2.value =''" style="width: 100%;">
     <div id="window1" class="window">
+        <input type="button" value="Charger une liste" onclick="charger_liste()" style="width: 50%;"><input type="button" onclick="telecharger_liste()"value="Télécharger la liste" style="width: 50%;">
         <div id="end"></div>
     </div>
-    <input type="button" id="button" value="commencer"  onclick="commencer()"><select id="mode" name="mode">
+    <input type="button"value="commencer" style="width: 80%;" onclick="commencer()"><select id="mode" name="mode">
         <option value="mode_fini">Mode fini</option>
         <option value="mode_infini">Mode infini</option>
     </select>
@@ -66,6 +67,14 @@
             
            <input id="recommencer" value="recommencer"type="button" onclick="commencer()">
         </div>
+    </div>
+    <div id="window4" class="window" style="display: flex; margin: auto; ">
+        
+        <input type="file" accept=".txt" class="inner"name="file" value="" id="inputfile">
+        
+        
+        <a id="downloadfile" class="inner" href="" onclick="window4.style.display = 'none'" download="liste_ludodefs.txt">Télécharger</a>
+        
     </div>
 </body>
 <script type="text/javascript" src="monscript.js"></script>
