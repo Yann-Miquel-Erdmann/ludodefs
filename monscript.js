@@ -233,7 +233,7 @@ function telecharger_liste(){
         document.getElementById("inputfile").style.display = "none"
         let fin = ""
         for(i in info1){
-            if(i+1 != info1.length){
+            if(i+3 < info1.length){
                 fin = fin+info1[i]+"¤"+info2[i]+"\n"
             }else{
                 fin = fin+info1[i]+"¤"+info2[i]
