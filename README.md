@@ -7,5 +7,10 @@ L'apprentissage se fait grace à des petits test de vocabulaire/définition cré
 # Partage
 De plus il est possible d'utiliser un finier "test" de quelqu'un d'autre sans souci. Cependant le partage de ce genre de fichiers n'est pas encore pris en charge par le site, ce sera donc à l'utilisateu de partager ses fichiers "test" par ses propres moyens. 
 
+# Suports pris en charge
+Pour l'instant seule la version pour ordinateur est prise en charge, il est possible d'utiliser le site avec un téléphone portable mais il se pourrait que certaines fonctionnalitées soient rendues impossible ou dificiles d'utilisation...
+
+
 # Version future
-Nous prévoyon pour une version future un partage de fichiers "test" facilité pris en charge par le site ou un service déjà existant type drive.
+Nous prévoyons pour une version future un partage de fichiers "test" facilité pris en charge par le site ou un service déjà existant type drive.
+Nour ajouterons la compatibilité avec les differents suports tels que le téléphone portable ou l'ordinateur avec un haute résolution, pas encore totalement pris en charge.
