@@ -5,6 +5,7 @@ let info1 = []
 let info2 = []
 var end = document.getElementById('end')
 var window1 = document.getElementById('window1')
+var window1_1= document.getElementById('window1_1')
 var window2 = document.getElementById('window2')
 var window3 = document.getElementById('window3')
 var window4 = document.getElementById('window4')
@@ -60,7 +61,7 @@ function ajouter(value1, value2){
         inform.appendChild(info_one);
         inform.appendChild(info_two);
         inform.appendChild(delete_);
-        window1.insertBefore(inform, end)
+        window1_1.insertBefore(inform, end)
         info_one.innerHTML = info1[info1.length-1]
         info_two.innerHTML = info2[info2.length-1]
         

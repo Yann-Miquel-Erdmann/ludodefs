@@ -1,19 +1,28 @@
 body{
     background-color: rgb(167, 220, 255);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 #text1{
-    width: 48.75%;
+    width: 49.5%;
     position: absolute;
     left: 0.5%;
-
-    top: 3px;
+    border-radius:4px 0px 0px 4px;
+    background-color: #95ff00b3;
+    border-color: rgba(0, 0, 0, 0.625);
 }
 #text2{
-    width: 48.75%;
+    width: 49.5%;
     position: absolute;
     right: 0.5%;
-    top: 3px;
+    border-radius:0px 4px 4px 0px;
+    background-color: #95ff00b3;
+    border-color: rgba(0, 0, 0, 0.625);
 }
+::placeholder{
+    color: black;
+    
+    opacity: 0.85;
+}  
 #infoone{
 
     height: 2em; 
@@ -37,6 +46,7 @@ body{
     position: absolute; 
     top: 0px; 
     left: 80%; 
+    border-radius:4px 4px 4px 4px;
 }
 #button{
     width: 80%;
@@ -44,15 +54,13 @@ body{
 #mode{
     width: 20%;
 }
-#window1{
-    background-color: aqua;
-}
 .window{
     position:absolute;
-    top: 15%;
+    top: 18%;
     background-color: aqua;
     text-align: center;
-    width: 100%;
+    left:0.5%;
+    width: 99%;
     height: 80%;
     cursor: default;
     -webkit-touch-callout: none; /* iOS Safari */
@@ -212,4 +220,62 @@ body{
     height: 100%;
     width: 100%;
     
+}
+input{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: solid;
+    border-color: transparent;
+    background: #0486ff85;
+    transition: border-color 0.5s;
+}
+input:hover{
+    border-color: rgba(0, 0, 0, 0.377);
+}
+.row1{
+    position:absolute;
+    top:0.5%;
+}
+.row2{
+    position:absolute;
+    top:6%;
+}.row3{
+    position:absolute;
+    top:11.5%;
+}
+.top{
+    height: 5%;
+    
+}
+.opt{
+    position: absolute;
+    left:79.5%;
+    background: #0486ff85;
+    border-radius:0px 4px 4px 0px;
+}
+
+.commencer{
+    width: 79%;
+    position: absolute;
+    left: 0.5%;
+    border-radius:4px 0px 0px 4px;
+}
+.ajouter{
+    width: 99%;
+    position: absolute;
+    left:0.5%;
+    border-radius:4px 4px 4px 4px;
+}
+.charge{
+    border-radius:4px 0px 0px 4px;
+}
+.download{
+    border-radius:0px 4px 4px 0px;
+}
+#window1_1{
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    top: 5%;
 }

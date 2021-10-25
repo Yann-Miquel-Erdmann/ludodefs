@@ -9,18 +9,22 @@
 </head>
 
 <body>
-    <input type="text" id="text1" value="" placeholder="Question"><input type="text"  placeholder="Réponse" id="text2" value="">
+    <input class="top row1"type="text" id="text1" value="" placeholder="Question"><input  class="top row1" type="text"  placeholder="Réponse" id="text2" value="">
     
     <br>
-    <input type="button"value="ajouter" onclick="ajouter(text1.value,text2.value); text1.value = '';text2.value =''" style="width: 100%;">
-    <div id="window1" class="window">
-        <input type="button" value="Charger une liste" onclick="charger_liste()" style="width: 50%;"><input type="button" onclick="telecharger_liste()"value="Télécharger la liste" style="width: 50%;">
-        <div id="end"></div>
-    </div>
-    <input type="button"value="commencer" style="width: 80%;" onclick="commencer()"><select id="mode" name="mode">
-        <option value="mode_fini">Mode fini</option>
-        <option value="mode_infini">Mode infini</option>
+    <input class="top row2 ajouter" type="button"value="ajouter" onclick="ajouter(text1.value,text2.value); text1.value = '';text2.value =''" style="width: 99%;">
+    <input class="top row3 commencer" type="button"value="commencer" onclick="commencer()"><select class="top row3 opt" id="mode" name="mode">
+        <option value="mode_fini" class="ded">Mode fini</option>
+        <option value="mode_infini" class="ded">Mode infini</option>
     </select>
+    <div id="window1" class="window">
+        <input type="button" class="charge" value="Charger une liste" onclick="charger_liste()" style="width: 50%;"><input class="download"type="button" onclick="telecharger_liste()"value="Télécharger la liste" style="width: 50%;">
+        <div id="window1_1">
+            <div id="end"></div>
+        </div>
+        
+    </div>
+    
     
     <div id="window2" class="window">
         <div id="question">
