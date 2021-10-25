@@ -240,5 +240,3 @@ function telecharger_liste(){
         alert('Impossible de télécharger une liste vide')
     }
 }
-
-//ceci est un test deazcfeg e
