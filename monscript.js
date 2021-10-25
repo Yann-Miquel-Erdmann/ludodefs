@@ -170,7 +170,7 @@ function show_test(i){
     
 }
 function commencer(){
-    if(info1.length > 4){
+    if(info1.length >= 4){
         window1.style.display = 'none'
         window3.style.display = 'none'
         window2.style.display = 'block'
@@ -185,7 +185,7 @@ function commencer(){
         }
         show_test(currentquestion)
     }else{
-        alert("Il n'y a pas assez d'information pour commencer l'entrainement")
+        alert("Il faut au minimum 4 définitions pour commencer le test")
     }
     
 }
@@ -233,6 +233,7 @@ function telecharger_liste(){
         document.getElementById("inputfile").style.display = "none"
         let fin = ""
         for(i in info1){
+
             if(i <= info1.length-2){
                 fin = fin+info1[i]+"¤"+info2[i]+"\n"
             }else{
