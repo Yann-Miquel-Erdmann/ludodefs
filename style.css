@@ -203,9 +203,9 @@ body{
 #window4{
     position: absolute; 
     top:40%;
-    left:30%;
+    left:20%;
     height: 30%;
-    width: 40%;
+    width: 60%;
     background-color: rgb(69, 190, 255);
 }
 #downloadfile{
