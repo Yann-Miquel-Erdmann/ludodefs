@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludodefs</title>
+</head>
+
+<body>
+    <input type="text" id="text1" value="" placeholder="Question"><input type="text"  placeholder="Réponse" id="text2" value="">
+    
+    <br>
+    <input type="button"value="ajouter" onclick="ajouter(text1.value,text1.value); text1.value = '';text2.value =''" style="width: 100%;">
+    <div id="window1" class="window">
+        <input type="button" value="Charger une liste" onclick="charger_liste()" style="width: 50%;"><input type="button" onclick="telecharger_liste()"value="Télécharger la liste" style="width: 50%;">
+        <div id="end"></div>
+    </div>
+    <input type="button"value="commencer" style="width: 80%;" onclick="commencer()"><select id="mode" name="mode">
+        <option value="mode_fini">Mode fini</option>
+        <option value="mode_infini">Mode infini</option>
+    </select>
+    
+    <div id="window2" class="window">
+        <div id="question">
+            <question class="inner">a</question>
+        </div>
+        <div id="rep1"  class="border" onclick="userrep(rep1.innerHTML)">
+            <rep1 class="inner"></rep1>
+        </div>
+        <div id="rep2" class="border" onclick="userrep(rep2.innerHTML)">
+            <rep2 class="inner"></rep2>
+        </div>
+        <div id="rep3" class="border" onclick="userrep(rep3.innerHTML)">
+            <rep3 class="inner"></rep3>
+        </div>
+        <div id="rep4" class="border" onclick="userrep(rep4.innerHTML)">
+            <rep4 class="inner"></rep4>
+        </div>
+        <div id="resultbas">
+            <div id="sur20basdiv">
+                <sur20bas class="inner"></sur20bas>
+            </div>
+            <div id="pourcentbasdiv">
+                <pourcentbas class="inner"></pourcentbas>
+            </div>
+            
+            
+            <input type="button" id="finirtest" value="Finir le test" onclick="show_result()">
+        </div>
+        
+    </div>
+    <div id="window3" class="window">
+        <div id="resultats">
+            <div id="result">Résultats</div>
+            <div id="resultat" class="inner"></div>
+            <br>
+            <div id="notesur20" class="inner">
+                <d >Votre note sur 20:</d>
+                <sur20></sur20>
+            </div>
+            <div id="pourcentage" class="inner">
+                <d>Votre pourcentage de réussite:</d>
+                <pourcent></pourcent>
+            </div>
+            
+           <input id="recommencer" value="recommencer"type="button" onclick="commencer()">
+        </div>
+    </div>
+    <div id="window4" class="window" style="display: flex; margin: auto; ">
+        
+        <input type="file" accept=".txt" class="inner"name="file" value="" id="inputfile">
+        
+        
+        <a id="downloadfile" class="inner" href="" onclick="window4.style.display = 'none'" download="liste_ludodefs.txt">Télécharger</a>
+        
+    </div>
+</body>
+<script type="text/javascript" src="monscript.js"></script>
+<link rel="stylesheet" href="style.css" ></link>
+</html>
