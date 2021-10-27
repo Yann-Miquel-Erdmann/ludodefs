@@ -9,77 +9,88 @@
 </head>
 
 <body>
-    <input class="top row1"type="text" id="text1" value="" placeholder="Question"><input  class="top row1" type="text"  placeholder="Réponse" id="text2" value="">
-    
-    <br>
-    <input class="top row2 ajouter" type="button"value="ajouter" onclick="ajouter(text1.value,text2.value); text1.value = '';text2.value =''" style="width: 99%;">
-    <input class="top row3 commencer" type="button"value="commencer" onclick="commencer()"><select class="top row3 opt" id="mode" name="mode">
-        <option value="mode_fini" class="ded">Mode fini</option>
-        <option value="mode_infini" class="ded">Mode infini</option>
-    </select>
-    <div id="window1" class="window">
-        <input type="button" class="charge" value="Charger une liste" onclick="charger_liste()" style="width: 50%;"><input class="download"type="button" onclick="telecharger_liste()"value="Télécharger la liste" style="width: 50%;">
-        <div id="window1_1">
-            <div id="end"></div>
-        </div>
+    <div class="entire">
         
-    </div>
-    
-    
-    <div id="window2" class="window">
-        <div id="question">
-            <question class="inner">a</question>
-        </div>
-        <div id="rep1"  class="border" onclick="userrep(rep1.innerHTML)">
-            <rep1 class="inner"></rep1>
-        </div>
-        <div id="rep2" class="border" onclick="userrep(rep2.innerHTML)">
-            <rep2 class="inner"></rep2>
-        </div>
-        <div id="rep3" class="border" onclick="userrep(rep3.innerHTML)">
-            <rep3 class="inner"></rep3>
-        </div>
-        <div id="rep4" class="border" onclick="userrep(rep4.innerHTML)">
-            <rep4 class="inner"></rep4>
-        </div>
-        <div id="resultbas">
-            <div id="sur20basdiv">
-                <sur20bas class="inner"></sur20bas>
-            </div>
-            <div id="pourcentbasdiv">
-                <pourcentbas class="inner"></pourcentbas>
-            </div>
+            <input class="top row1"type="text" id="text1" value="" placeholder="Question"><input  class="top row1" type="text"  placeholder="Réponse" id="text2" value="">
             
-            
-            <input type="button" id="finirtest" value="Finir le test" onclick="show_result()">
-        </div>
-        
-    </div>
-    <div id="window3" class="window">
-        <div id="resultats">
-            <div id="result">Résultats</div>
-            <div id="resultat" class="inner"></div>
             <br>
-            <div id="notesur20" class="inner">
-                <d >Votre note sur 20:</d>
-                <sur20></sur20>
+            <input class="ajouter" type="button"value="ajouter" onclick="ajouter(text1.value,text2.value); text1.value = '';text2.value =''" >
+            <input class="commencer" type="button"value="commencer" onclick="commencer()">
+            <div class="dropdown">
+                <button class="btn" id="btn">Mode fini<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-menu">
+                  <button onclick="mode = 'mode_fini'; document.getElementById('btn').innerHTML = 'Mode fini'">Mode fini</button>
+                  <button onclick="mode = 'mode_infini'; document.getElementById('btn').innerHTML = 'Mode infini'">Mode infini</button>
+                </div>
             </div>
-            <div id="pourcentage" class="inner">
-                <d>Votre pourcentage de réussite:</d>
-                <pourcent></pourcent>
+        
+
+        <div id="window1" class="window">
+            <input type="button" class="charge" value="Charger une liste" onclick="charger_liste()"><input class="download"type="button" onclick="telecharger_liste()"value="Télécharger la liste" >
+            <div id="window1_1">
+                <div id="end"></div>
             </div>
             
-           <input id="recommencer" value="recommencer"type="button" onclick="commencer()">
+        </div>
+        
+        
+        <div id="window2" class="window2">
+            <div id="question" class="container">
+                <question class="inner"></question>
+            </div>
+            <div id="rep1"  class="container" onclick="userrep(rep1.innerHTML)">
+                <rep1 class="inner"></rep1>
+            </div>
+            <div id="rep2" class="container" onclick="userrep(rep2.innerHTML)">
+                <rep2 class="inner"></rep2>
+            </div>
+            <div id="rep3" class="container" onclick="userrep(rep3.innerHTML)">
+                <rep3 class="inner"></rep3>
+            </div>
+            <div id="rep4" class="container" onclick="userrep(rep4.innerHTML)">
+                <rep4 class="inner"></rep4>
+            </div>
+            <div id="resultbas">
+                <div class="sur20basdiv container">
+                    <sur20bas class="inner"></sur20bas>
+                </div>
+                <div class="pourcentbasdiv container" >
+                    <pourcentbas class="inner"></pourcentbas>
+                </div>
+                
+                
+                <input type="button" id="finirtest" value="Finir le test" onclick="show_result()">
+            </div>
+            
+        </div>
+        <div id="window3" class="window">
+            
+                <div id="result" class="inner">Résultats:</div>
+                <div id="resultat" class="inner"></div>
+                
+                <div id="notesur20" class="inner">
+                    <d >Votre note sur 20:</d>
+                    <sur20></sur20>
+                </div>
+                <div id="pourcentage" class="inner">
+                    <d>Votre pourcentage de réussite:</d>
+                    <pourcent></pourcent>
+                </div>
+                
+            <input id="recommencer" value="recommencer"type="button" onclick="commencer()">
+            
+        </div>
+        <div id="window4" class="window">
+            
+            <input type="file" accept=".txt" name="file" value="" id="inputfile">
+            
+            
+            <a id="downloadfile" href="" onclick="window4.style.display = 'none'" download="liste_ludodefs.txt">Télécharger</a>
+            
+            <input type="button" id="btnanuler" onclick="window1.style.display = 'grid';window2.style.display = 'none';window3.style.display = 'none';window4.style.display = 'none'" value="Anuler">
         </div>
     </div>
-    <div id="window4" class="window" style="display: flex; margin: auto; ">
-        
-        <input type="file" accept=".txt" class="inner"name="file" value="" id="inputfile">
-        
-        
-        <a id="downloadfile" href="" onclick="window4.style.display = 'none'"  style="width:100%; font-size: larger;"download="liste_ludodefs.txt">Télécharger</a>
-        
-    </div>
+
 </body>
 <script type="text/javascript" src="monscript.js"></script>
 <link rel="stylesheet" href="style.css" ></link>

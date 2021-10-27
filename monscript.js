@@ -14,7 +14,7 @@ var rep2 = document.querySelector('rep2')
 var rep3 = document.querySelector('rep3')
 var rep4 = document.querySelector('rep4')
 var question = document.querySelector('question')
-var mode = document.getElementById('mode')
+var mode = 'mode_fini'
 var bonnereponse = 0
 var ratés = []
 var currentquestion = 0
@@ -40,9 +40,10 @@ function delete_info(f){
     }
 }
 function ajouter(value1, value2){
-    window1.style.display = "block"
+    window1.style.display = "grid"
     window2.style.display = 'none'
     window3.style.display = 'none'
+    window4.style.display = 'none'
     if(value1!="" & value2!=""){
         info1.push(value1)
         info2.push(value2)
@@ -81,8 +82,10 @@ function random_exept(listlength, e){
 }
 
 function show_result(){
+    window1.style.display = "none"
     window2.style.display = "none"
-    window3.style.display = "block"
+    window3.style.display = "grid"
+    window4.style.display = "none"
     let survingt = Math.round(bonnereponse/(currentquestion+reset*info1.length)*200)/10
     let pourcent = Math.round(bonnereponse/(currentquestion+reset*info1.length)*100*100)/100
     if(survingt>=0){
@@ -111,14 +114,14 @@ function userrep(userreponse){
         bonnereponse++
     }
     currentquestion++
-    if(mode.value == 'mode_fini'){
+    if(mode == 'mode_fini'){
         if(currentquestion<info1.length){
             show_test(currentquestion)
         }else{
             show_result()
         }
     }
-    if(mode.value == 'mode_infini'){
+    if(mode == 'mode_infini'){
         let survingt = Math.round(bonnereponse/(currentquestion+reset*info1.length)*200)/10
         let pourcent = Math.round(bonnereponse/(currentquestion+reset*info1.length)*100*100)/100
         document.querySelector('pourcentbas').innerHTML = pourcent+"%"
@@ -173,13 +176,15 @@ function commencer(){
     if(info1.length >= 4){
         window1.style.display = 'none'
         window3.style.display = 'none'
-        window2.style.display = 'block'
+        window2.style.display = 'grid'
+        window4.style.display = 'none'
+        
         currentquestion = 0
         bonnereponse = 0
         reset = 0
         reslutbas.style.display = 'none'
-        if(mode.value == 'mode_infini'){
-            reslutbas.style.display = 'block'
+        if(mode == 'mode_infini'){
+            reslutbas.style.display = 'grid'
             document.querySelector('pourcentbas').innerHTML = 100+"%"
             document.querySelector('sur20bas').innerHTML = 20+"/20"
         }
@@ -191,11 +196,16 @@ function commencer(){
 }
 
 function charger_liste(){
-    window4.style.display= "block"
+    document.getElementById("inputfile").value = ""
+    window1.style.display = 'none'
+    window3.style.display = 'none'
+    window2.style.display = 'none'
+    window4.style.display= "grid"
+
     document.getElementById("downloadfile").style.display = "none"
     document.getElementById("inputfile").style.display = "block"
     document.getElementById("inputfile").addEventListener('change', function() {
-        
+     
         var all_files = this.files;
         if(all_files.length == 0) {
             alert('Error : No file selected');
@@ -228,7 +238,10 @@ function charger_liste(){
 }
 function telecharger_liste(){
     if(info1.length>0){
-        window4.style.display= "block"
+        window1.style.display = 'none'
+        window3.style.display = 'none'
+        window2.style.display = 'none'
+        window4.style.display= "grid"
         document.getElementById("downloadfile").style.display = "block"
         document.getElementById("inputfile").style.display = "none"
         let fin = ""
