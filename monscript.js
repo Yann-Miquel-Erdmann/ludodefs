@@ -214,7 +214,7 @@ function charger_liste(){
         var file = all_files[0];
         var max_size_allowed = 2*1024*1024
         if(file.size > max_size_allowed) {
-            alert('Error : Exceeded size 2MB');
+            alert('Erreur : La liste exède 2MB');
             return;
         }
         var reader = new FileReader();
@@ -259,6 +259,3 @@ function telecharger_liste(){
         alert('Impossible de télécharger une liste vide')
     }
 }
-
-
-
